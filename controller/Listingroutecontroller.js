@@ -4,11 +4,13 @@ const mongoose = require('mongoose');
 
 module.exports.index = async(req, res) => {
     const allListings = await Listing.find({});
-    res.render("../views/listings/index.ejs", { allListings });
+    res.render("listings/index", { allListings });
+    //   res.render("../views/listings/index.ejs", { allListings });
 };
 
 module.exports.renderNewForm = (req, res) => {
-    res.render("../views/Listings/create.ejs")
+    // res.render("../views/Listings/create.ejs");
+    res.render("Listings/create");
 };
 
 
@@ -50,7 +52,8 @@ module.exports.editListing = async(req, res) => {
 
         let origanalLimageUrl = listing.image.url;
         origanalLimageUrl = origanalLimageUrl.replace("/upload", "/upload/w_250");
-        res.render("Listings/edit.ejs", { listing, origanalLimageUrl });
+        // res.render("Listings/edit.ejs", { listing, origanalLimageUrl });
+        res.render("Listings/edit", { listing, origanalLimageUrl });
     } catch (err) {
         console.error("Error in edit route:", err);
         res.status(500).send("Server Error");
@@ -96,5 +99,6 @@ module.exports.showListing = async(req, res) => {
     }
     console.log(listing);
     // console.log(listing);
-    res.render("../views/listings/show.ejs", { listing });
+    res.render("listings/show", { listing });
+    //  res.render("../views/listings/show.ejs", { listing });
 };
