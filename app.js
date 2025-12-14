@@ -82,6 +82,10 @@ const sessionOption = {
 // app.get("/", (req, res) => {
 //     res.send("hi, i am root");
 // })
+app.get("/", (req, res) => {
+    res.redirect("/listings");   // root pe jao to listings page khul jaye
+});
+
 
 // session setup
 app.use(session(sessionOption));
