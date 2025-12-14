@@ -99,6 +99,6 @@ module.exports.showListing = async(req, res) => {
     }
     console.log(listing);
     // console.log(listing);
-    res.render("listings/show", { listing });
+    res.render("Listings/show", { listing });
     //  res.render("../views/listings/show.ejs", { listing });
 };
