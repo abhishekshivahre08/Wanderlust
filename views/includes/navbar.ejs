@@ -41,17 +41,20 @@
                     <button class="btn btn-search" type="submit"> <i class="fa-solid fa-magnifying-glass"></i>Search</button>
                 </form>
             </div>
-            <div class="navbar-nav  ms-auto">
-                <a class="nav-link" href="/Listings/new">Add new Listing</a>
-                <% if(!currentUser) { %>
-                    <a class="nav-link" href="/signup"><b>Sign Up</b></a>
-                    <a class="nav-link" href="/Login"><b>Login</b></a>
-                    <%  } %>
-                        <% if(currentUser) { %>
-                            <a class="nav-link" href="/logout"><b>Logout</b></a>
-                            <%  } %>
-            </div>
 
+
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="/Listings/new">Add new Listing</a>
+
+                <% if(typeof currentUser === "undefined" || !currentUser) { %>
+                    <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+                    <a class="nav-link" href="/login"><b>Login</b></a>
+                    <% } else { %>
+                        <a class="nav-link" href="/logout"><b>Logout</b></a>
+                        <% } %>
+            </div>
         </div>
+
+    </div>
     </div>
 </nav>
