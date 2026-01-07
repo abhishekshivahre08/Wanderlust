@@ -6,13 +6,29 @@
                 display: flex;
                 flex-wrap: wrap;
                 align-items: center;
-                /* text-align: center; */
+                gap: 0.5rem;
+                overflow-x: auto;
+                padding: 1rem 0;
             }
             
             .filter {
                 text-align: center;
-                margin: 1rem;
+                margin: 0.5rem;
                 opacity: 0.7;
+                flex-shrink: 0;
+                transition: all 0.3s ease;
+            }
+            
+            .filter i {
+                font-size: 1.5rem;
+                display: block;
+                margin-bottom: 0.3rem;
+            }
+            
+            .filter p {
+                margin: 0;
+                font-size: 0.85rem;
+                white-space: nowrap;
             }
             
             .filter:hover {
@@ -27,11 +43,64 @@
             .tax-toggle {
                 border: 1px solid black;
                 border-radius: 1rem;
-                height: 3.25rem;
-                padding: 1rem;
-                margin-left: 3rem;
+                padding: 0.75rem 1rem;
                 display: flex;
                 align-items: center;
+                flex-shrink: 0;
+                margin-left: auto;
+            }
+            /* Tablet devices */
+            
+            @media(max-width: 768px) {
+                #filters {
+                    gap: 0.25rem;
+                    padding: 0.75rem 0;
+                }
+                .filter {
+                    margin: 0.25rem;
+                }
+                .filter i {
+                    font-size: 1.25rem;
+                }
+                .filter p {
+                    font-size: 0.75rem;
+                }
+                .tax-toggle {
+                    padding: 0.5rem 0.75rem;
+                    margin-left: 0.5rem;
+                }
+                .form-check-label {
+                    font-size: 0.75rem;
+                }
+            }
+            /* Mobile devices */
+            
+            @media(max-width: 480px) {
+                #filters {
+                    gap: 0.1rem;
+                    padding: 0.5rem 0;
+                    overflow-x: auto;
+                }
+                .filter {
+                    margin: 0.1rem;
+                    padding: 0.25rem;
+                }
+                .filter i {
+                    font-size: 1rem;
+                }
+                .filter p {
+                    font-size: 0.65rem;
+                }
+                .tax-toggle {
+                    padding: 0.4rem 0.5rem;
+                    margin-left: 0;
+                    margin-top: 0.5rem;
+                    width: 100%;
+                    order: 100;
+                }
+                .form-check-label {
+                    font-size: 0.65rem;
+                }
             }
         </style>
 

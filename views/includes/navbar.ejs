@@ -4,6 +4,8 @@
         color: white;
         border-radius: 25px;
         padding: 0 1rem 0 1rem;
+        white-space: nowrap;
+        transition: all 0.3s ease;
     }
     
     .btn-search:hover {
@@ -20,6 +22,56 @@
         border-radius: 25px;
         padding: 0.5rem 3rem 0.5rem 3rem;
         font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+    
+    .search-form {
+        display: flex;
+        gap: 0.5rem;
+    }
+    /* Mobile responsive */
+    
+    @media(max-width: 768px) {
+        .search-form {
+            width: 100%;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+        }
+        .serach-input {
+            flex: 1;
+            min-width: 150px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+        .btn-search {
+            padding: 0.5rem 0.75rem;
+            font-size: 0.85rem;
+        }
+        .btn-search .btn-text {
+            display: none;
+        }
+        .btn-search i {
+            margin: 0;
+        }
+    }
+    /* Small mobile */
+    
+    @media(max-width: 480px) {
+        .search-form {
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+        .serach-input {
+            flex: 1;
+            min-width: 120px;
+            padding: 0.4rem 0.75rem;
+            font-size: 0.8rem;
+        }
+        .btn-search {
+            padding: 0.4rem 0.5rem;
+            font-size: 0.75rem;
+        }
     }
 </style>
 
@@ -36,9 +88,9 @@
                 <a class="nav-link" href="/Listings">Explore</a>
             </div>
             <div class="navbar-nav ms-auto">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2 serach-input" type="search" placeholder="Search Destination" aria-label="Search" />
-                    <button class="btn btn-search" type="submit"> <i class="fa-solid fa-magnifying-glass"></i>Search</button>
+                <form class="d-flex search-form" role="search">
+                    <input class="form-control serach-input" type="search" placeholder="Search Destination" aria-label="Search" />
+                    <button class="btn btn-search" type="submit"> <i class="fa-solid fa-magnifying-glass"></i><span class="btn-text">Search</span></button>
                 </form>
             </div>
 
